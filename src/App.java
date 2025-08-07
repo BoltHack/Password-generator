@@ -47,7 +47,7 @@ public class App extends JFrame {
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
             clipboard.setContents(copyText, null);
 
-            JOptionPane.showMessageDialog(null, "Пароль успешно скопирован!", "Успешное выполнение!", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Пароль скопирован в буфер обмена!", "Успешное выполнение!", JOptionPane.INFORMATION_MESSAGE);
 
             remove(copyPasswordButton);
             add(messageLabel, BorderLayout.NORTH);
@@ -88,7 +88,7 @@ public class App extends JFrame {
                 revalidate();
                 repaint();
             }
-            copyPasswordButton.setText("<html><div style='max-width: 100%; width: 100%; text-align: center;'>Ваш пароль: <br/>" + password +  "<br/>Нажмите, чтобы скопировать пароль</div></html>");
+            copyPasswordButton.setText("<html><div style='max-width: 100%; width: 100%; text-align: center;'>Нажмите, чтобы скопировать пароль:<br/>" + password +  "</div></html>");
             maxLengthInput.setText("");
             remove(messageLabel);
             revalidate();
