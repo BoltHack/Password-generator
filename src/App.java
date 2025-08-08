@@ -18,6 +18,7 @@ public class App extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(new Color(0x16171d));
         setLocationRelativeTo(null);
+        setTitle("Генератор паролей");
 
         messageLabel = new JLabel("Введите желаемую длину пароля");
         messageLabel.setBackground(new Color(0x16171d));
