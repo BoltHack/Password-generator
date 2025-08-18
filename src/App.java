@@ -37,11 +37,15 @@ public class App extends JFrame {
         generateButton.setBackground(new Color(0x16171d));
         generateButton.setForeground(new Color(0xffffff));
         generateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        generateButton.setContentAreaFilled(false);
+        generateButton.setFocusPainted(false);
 
         copyPasswordButton = new JButton("");
         copyPasswordButton.setBackground(new Color(0x16171d));
         copyPasswordButton.setForeground(new Color(0xffffff));
         copyPasswordButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        copyPasswordButton.setContentAreaFilled(false);
+        copyPasswordButton.setFocusPainted(false);
 
         copyPasswordButton.addActionListener(e -> {
             StringSelection copyText = new StringSelection(password);
@@ -50,6 +54,7 @@ public class App extends JFrame {
 
             JOptionPane.showMessageDialog(null, "Пароль скопирован в буфер обмена!", "Успешное выполнение!", JOptionPane.INFORMATION_MESSAGE);
 
+            add(generateButton, BorderLayout.SOUTH);
             remove(copyPasswordButton);
             add(messageLabel, BorderLayout.NORTH);
             revalidate();
@@ -85,6 +90,7 @@ public class App extends JFrame {
             System.out.println("password: " + password);
 
             if (copyPasswordButton.getParent() == null) {
+                remove(generateButton);
                 add(copyPasswordButton, BorderLayout.NORTH);
                 revalidate();
                 repaint();
